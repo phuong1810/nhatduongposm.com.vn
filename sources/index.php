@@ -4,11 +4,15 @@ $default = $cache->get("select photo from #_photo where type = ? and act = ? and
 $popup = $cache->get("select name$lang, photo, link from #_photo where type = ? and act = ? and find_in_set('hienthi',status) limit 0,1", array('popup', 'photo_static'), 'fetch', 7200);
 $partner = $cache->get("select name$lang, link, photo from #_photo where type = ? and find_in_set('hienthi',status) order by numb, id desc", array('doitac'), 'result', 7200);
 $splist = $cache->get("select name$lang, slugvi, slugen, id, photo from #_product_list where type = ? and find_in_set('hienthi',status) and find_in_set('noibat',status) order by numb,id desc", array('san-pham'), 'result', 7200);
+$spcatnb = $cache->get("select name$lang, desc$lang,slugvi, slugen, id, photo from #_product_cat where type = ? and find_in_set('hienthi',status) and find_in_set('noibat',status) order by numb,id desc", array('san-pham'), 'result', 7200);
 $spnb = $cache->get("select name$lang, slugvi, slugen, id, photo from #_product where type = ? and find_in_set('hienthi',status) and find_in_set('noibat',status) order by numb,id desc limit 10", array('san-pham'), 'result', 7200);
 
-$tinhnang = $cache->get("select name$lang,desc$lang,photo from #_news where type = ? and find_in_set('hienthi',status) order by numb,id desc", array('tinhnang'), 'result', 7200);
-$trangchu = $cache->get("select name$lang, desc$lang, photo, content$lang from #_static where type = ? limit 0,1", array('trangchu'), 'fetch', 7200);
-$bvtrangchu = $cache->get("select name$lang,desc$lang,photo from #_news where type = ? and find_in_set('hienthi',status) order by numb,id desc", array('bvtrangchu'), 'result', 7200);
+$rs_slide = $cache->get("select name$lang,desc$lang,photo from #_news where type = ? and find_in_set('hienthi',status) order by numb,id desc", array('bvslide'), 'result', 7200);
+$bvslide = $cache->get("select name$lang, content$lang from #_static where type = ? limit 0,1", array('bvslide'), 'fetch', 7200);
+$quytrinh = $cache->get("select name$lang,desc$lang,photo,slugvi, slugen from #_news where type = ? and find_in_set('hienthi',status) order by numb,id desc", array('quytrinh'), 'result', 7200);
+$chatluong = $cache->get("select name$lang,desc$lang,photo from #_news where type = ? and find_in_set('hienthi',status) order by numb,id desc", array('chatluong'), 'result', 7200);
+$nhamay = $cache->get("select name$lang,desc$lang,photo,slugvi, slugen from #_news where type = ? and find_in_set('hienthi',status) order by numb,id desc", array('nhamay'), 'result', 7200);
+
 $baogia = $cache->get("select name$lang,desc$lang,photo from #_news where type = ? and find_in_set('hienthi',status) order by numb,id desc", array('baogia'), 'result', 7200);
 
 $newsnb = $cache->get("select name$lang, desc$lang, photo,date_created,slugvi, slugen from #_news where type = ? and find_in_set('hienthi',status) and find_in_set('noibat',status) order by numb,id desc limit 10", array('tin-tuc'), 'result', 7200);

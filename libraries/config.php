@@ -18,12 +18,12 @@ $config = array(
     'arrayDomainSSL' => array(""),
     'database' => array(
         'server-name' => $_SERVER["SERVER_NAME"],
-        'url' => '/khoahuynhdai/',
+        'url' => '/nhatduongposm.com.vn/',
         'type' => 'mysql',
         'host' => 'localhost',
         'username' => 'root',
         'password' => 'root',
-        'dbname' => 'longvn_khoahuynhdai',
+        'dbname' => 'longvn_nhatduongposm.com.vn',
         'port' => 3306,
         'prefix' => 'table_',
         'charset' => 'utf8mb4'
@@ -141,7 +141,7 @@ define('TOKEN', md5(NN_CONTRACT . $config['database']['url']));
 /* Path */
 define('ROOT', str_replace(basename(__DIR__), '', __DIR__));
 define('ASSET', $http . $configUrl);
-define('ADMIN', 'quantri');
+define('ADMIN', 'admin');
 
 /* Cấu hình login */
 $loginAdmin = $config['login']['admin'];

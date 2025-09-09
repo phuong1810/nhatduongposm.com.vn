@@ -34,6 +34,7 @@
         </div>
 
     </div>
+    <?php if($com!="quy-trinh" || $com!="nha-may"){ ?>
     <div class="box-detail">
         <div class="wrap-content">
             <div class="title-global">
@@ -74,4 +75,5 @@
             </div>
         </div>
     </div>
+    <?php } ?>
 </div>

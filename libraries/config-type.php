@@ -1,7 +1,11 @@
 <?php
 /* Config type - Group */
 $config['group'] = array(
+    "Bài viết dưới slide" => array(
+        "news" => array("bvslide"),
+        "static" => array("bvslide"),
 
+    ),
 );
 
 /* Config type - Product */

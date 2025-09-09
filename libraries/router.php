@@ -104,9 +104,9 @@ $requick = array(
     // array("tbl" => "tags", "tbltag" => "news", "field" => "id", "source" => "tags", "com" => "tags-tin-tuc", "type" => "tin-tuc", "menu" => true),
 
     /* Thư viện ảnh */
-    array("tbl" => "news", "field" => "id", "source" => "news", "com" => "hoat-dong", "type" => "hoat-dong", "menu" => true),
+    array("tbl" => "news", "field" => "id", "source" => "news", "com" => "quy-trinh", "type" => "quytrinh", "menu" => true),
 
-    array("tbl" => "news", "field" => "id", "source" => "news", "com" => "dich-vu", "type" => "dich-vu", "menu" => true),
+    array("tbl" => "news", "field" => "id", "source" => "news", "com" => "nha-may", "type" => "nhamay", "menu" => true),
     array("tbl" => "news", "field" => "id", "source" => "news", "com" => "tin-tuc", "type" => "tin-tuc", "menu" => true),
 
     /* Trang tĩnh */
@@ -160,14 +160,27 @@ switch ($com) {
         $seo->set('type', 'article');
         $titleMain = "Giới thiệu";
         break;
-    case 'dich-vu':
-        $source = "news";
-        $template = isset($_GET['id']) ? "news/news_detail" : "news/news";
-        $seo->set('type', isset($_GET['id']) ? "article" : "object");
-        $type = $com;
-        $titleMain = "Dịch vụ";
+    case 'ho-so-nang-luc':
+        $source = "static";
+        $template = "static/static";
+        $type = "ho-so-nang-luc";
+        $seo->set('type', 'article');
+        $titleMain = "Hồ sơ năng lực";
         break;
-
+    case 'quy-trinh':
+        $source = "news";
+        $template = isset($_GET['id']) ? "news/news_detail2" : "news/news";
+        $seo->set('type', isset($_GET['id']) ? "article" : "object");
+        $type = "quytrinh";
+        $titleMain = "Quy trình";
+        break;
+    case 'nha-may':
+        $source = "news";
+        $template = isset($_GET['id']) ? "news/news_detail2" : "news/news";
+        $seo->set('type', isset($_GET['id']) ? "article" : "object");
+        $type = "nhamay";
+        $titleMain = "Nhà máy";
+        break;
     case 'tin-tuc':
         $source = "news";
         $template = isset($_GET['id']) ? "news/news_detail" : "news/news";

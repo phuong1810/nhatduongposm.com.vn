@@ -28,6 +28,56 @@
         </div>
     </div>
 </div>
+<?php if (count($partner)) { ?>
+    <div class="wrap-partner">
+        <div class="wrap-content">
+            <div class="title-global">
+                <h2 class="ttl2">Tại sao chọn chúng tôi?</h2>
+                <p class="desc">Tại sao những nhãn hàng nổi tiếng tại Việt Nam lại chọn Nhật Dương</p>
+            </div>
+                <div class="owl-carousel partner-carousel"
+                     data-items="screen:0|items:1,screen:576|items:1,screen:768|items:1,screen:992|items:1,screen:1200|items:1"
+                     data-nav="1"
+                     data-dots="0"
+                     data-loop="1"
+                     data-autoplay="1"
+                     data-autoplaytimeout="3000"
+                     data-smartspeed="800"
+                     data-mousedrag="1"
+                     data-touchdrag="1">
+                    <?php
+                    $totalPartners = count($partner);
+                    $partnersPerRow = 6; // Số partner mỗi hàng
+                    $currentIndex = 0;
+
+                    foreach ($partner as $index => $v) {
+                        // Bắt đầu hàng mới
+                        if ($currentIndex % $partnersPerRow == 0) {
+                            if ($currentIndex > 0) {
+                                echo '</div>'; // Đóng hàng trước đó
+                            }
+                            echo '<div class="item partner-row">';
+                        }
+
+                        // Hiển thị partner
+                        echo '<div class="partner-item">';
+                        echo '<a class="partner" href="' . $v['link'] . '" target="_blank" title="' . $v['name' . $lang] . '">';
+                        echo $func->getImage(['class' => 'lazy w-100', 'sizes' => '218x122x2', 'upload' => UPLOAD_PHOTO_L, 'image' => $v['photo'], 'alt' => $v['name' . $lang]]);
+                        echo '</a>';
+                        echo '</div>';
+
+                        $currentIndex++;
+                    }
+
+                    // Đóng hàng cuối cùng
+                    if ($currentIndex > 0) {
+                        echo '</div>';
+                    }
+                    ?>
+                </div>
+        </div>
+    </div>
+<?php } ?>
 <?php if(count($spcatnb)){ ?>
     <div class="wrap-splist">
         <div class="wrap-content">

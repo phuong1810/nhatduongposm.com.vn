@@ -350,6 +350,13 @@ NN_FRAMEWORK.OwlPage = function () {
 			NN_FRAMEWORK.OwlData($(this));
 		});
 	}
+
+	/* Partner Carousel */
+	if (isExist($('.partner-carousel'))) {
+		$('.partner-carousel').each(function () {
+			NN_FRAMEWORK.OwlData($(this));
+		});
+	}
 };
 
 /* Dom Change */
